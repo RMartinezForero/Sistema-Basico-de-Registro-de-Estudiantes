@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class App {
+    //esto es una prueba de uno clonado
     static String nombre;
     static double nota1;
     static double nota2;
