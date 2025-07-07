@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class App {
-    //esto es una prueba de uno clonado
     static String nombre;
     static double nota1;
     static double nota2;
@@ -49,8 +48,11 @@ public class App {
 
     public static void registrarDatosEstudiante(Scanner entrada){
         System.out.println("...registrar datos de un estudiante...\n");
-        System.out.print("por favor digite el nombre completo del estudiante: ");
-        nombre = entrada.nextLine();
+
+        do{
+            System.out.print("por favor digite el nombre completo del estudiante: ");
+            nombre = entrada.nextLine();
+        }while(!validarNombre(nombre));
 
         do{
             System.out.print("Por favor digite la nota #1: ");
@@ -102,6 +104,15 @@ public class App {
         }else{
             System.out.println("\nEsta nota no es valida. Por favor digite una nota del 0 al 100\n");
             return false;
+        }
+    }
+
+    public static boolean validarNombre(String nombre){
+        if(nombre.isBlank()){
+            System.out.println("\nEste nombre no es valido. Por favor intentelo nuevamente\n");
+            return false;
+        }else{
+            return true;
         }
     }
 }
