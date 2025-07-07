@@ -52,17 +52,24 @@ public class App {
         System.out.print("por favor digite el nombre completo del estudiante: ");
         nombre = entrada.nextLine();
 
-        System.out.print("Por favor digite la nota #1: ");
-        nota1 = entrada.nextDouble();
-        entrada.nextLine();
+        do{
+            System.out.print("Por favor digite la nota #1: ");
+            nota1 = entrada.nextDouble();
+            entrada.nextLine();
+        }while(!validarNota(nota1));
 
-        System.out.print("Por favor digite la nota #2: ");
-        nota2 = entrada.nextDouble();
-        entrada.nextLine();
+        do{
+            System.out.print("Por favor digite la nota #2: ");
+            nota2 = entrada.nextDouble();
+            entrada.nextLine();
+        }while(!validarNota(nota2));
 
-        System.out.print("Por favor digite la nota #3: ");
-        nota3 = entrada.nextDouble();
-        entrada.nextLine();
+        do{
+            System.out.print("Por favor digite la nota #3: ");
+            nota3 = entrada.nextDouble();
+            entrada.nextLine();
+        }while(!validarNota(nota3));
+
         System.out.println("\n...registro exitoso...\n");
     }
 
@@ -87,5 +94,14 @@ public class App {
         double promedio = (nota1 + nota2 + nota3)/3;
         System.out.println("el promedio de notas del estudiante actual es: " + promedio + "\n");
         return promedio;
+    }
+
+    public static boolean validarNota(double nota){
+        if(nota >= 0 && nota <= 100){
+            return true;
+        }else{
+            System.out.println("\nEsta nota no es valida. Por favor digite una nota del 0 al 100\n");
+            return false;
+        }
     }
 }
