@@ -7,24 +7,13 @@ public class App {
     static double nota3;
     public static void main(String[] args) {
         var entrada = new Scanner(System.in);
-        mostrarMenu(entrada);
-    }
-
-    public static void mostrarMenu(Scanner entrada){
-
         var opcion = 0;
+
         do {
-            System.out.println("""
-                    --- Sistema de Registro de Estudiantes ---
-                    1. Registrar datos de un estudiante
-                    2. Mostrar datos del estudiante actual
-                    3. Calcular promedio de notas del estudiante actual
-                    0. Salir
-                    \n""");
-            System.out.print("Ingrese su opción: ");
+            mostrarMenu(entrada);            
             opcion = entrada.nextInt();
             entrada.nextLine();
-            System.out.println("");
+            System.out.println();
 
             switch (opcion) {
                 case 1:
@@ -44,6 +33,17 @@ public class App {
                     break;
             }
         } while(opcion != 0);
+    }
+
+    public static void mostrarMenu(Scanner entrada){
+        System.out.println("""
+                --- Sistema de Registro de Estudiantes ---
+                1. Registrar datos de un estudiante
+                2. Mostrar datos del estudiante actual
+                3. Calcular promedio de notas del estudiante actual                    
+                0. Salir
+                \n""");
+        System.out.print("Ingrese su opción: ");
     }
 
     public static void registrarDatosEstudiante(Scanner entrada){
