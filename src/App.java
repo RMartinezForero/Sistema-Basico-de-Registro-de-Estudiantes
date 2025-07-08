@@ -25,8 +25,8 @@ public class App {
                 case 3:
                     var promedio = calcularPromedio();
                     System.out.printf("el promedio del estudiante actual es: %.2f", promedio);
-                    System.out.println("");
-                    System.out.println("");
+                    System.out.println();
+                    System.out.println();
                     break;
                 case 0:
                     System.out.println("El programa ha finalizado\n");
@@ -36,6 +36,7 @@ public class App {
                     break;
             }
         } while(opcion != 0);
+        entrada.close();
     }
 
     public static void mostrarMenu(Scanner entrada){
