@@ -23,7 +23,10 @@ public class App {
                     mostrarInfoEstudiante();
                     break;
                 case 3:
-                    calcularPromedio();
+                    var promedio = calcularPromedio();
+                    System.out.printf("el promedio del estudiante actual es: %.2f", promedio);
+                    System.out.println("");
+                    System.out.println("");
                     break;
                 case 0:
                     System.out.println("El programa ha finalizado\n");
@@ -92,9 +95,8 @@ public class App {
     }
 
     public static double calcularPromedio(){
-        System.out.println("...Calcular promedio de notas del estudiante actual...");
+        System.out.println("...Calcular promedio de notas del estudiante actual...\n");
         double promedio = (nota1 + nota2 + nota3)/3;
-        System.out.println("el promedio de notas del estudiante actual es: " + promedio + "\n");
         return promedio;
     }
 
